@@ -19,5 +19,4 @@ with_int = 1 + 1
 
 -- so lets define an instance of `Num` for symbolic expressions...
 
-
--- # Functors, Monoids, Monads (s/oi/a/)
+-- [insert instance here]

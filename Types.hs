@@ -13,6 +13,8 @@ int = 0
 
 -- etc
 
+-- some special syntax for composite types
+
 tuple :: (Int, String)
 tuple = (1, "aaa")
 
@@ -32,7 +34,7 @@ plus l r = l + r
 
 -- user defined types with: type, data and newtype
 
-type Alias a = [a]
+type List a = [a] -- just an alias for [a]
 
 data Tree a = Leaf a
             | Node { left :: Tree a, right :: Tree a}
@@ -52,20 +54,4 @@ top = undefined
 
 inferred l r = l + r
 
--- ## Kinds
---
--- Type constructors have kinds where kind = { *
---                                           { kind -> kind
---
--- type has a kind as a value has a type
---
--- we can annotate kinds to types but usually we do not need to
-
-data Foo (a :: * -> * ) k = Foo (a k)
-
--- `Foo` has kind (* -> *) -> * -> *
-
--- Partially applied type constructor
--- `Foo a` has kind * -> *
-
--- right. Where do we need kinds?
+-- :t inferred
